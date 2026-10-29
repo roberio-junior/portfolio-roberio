@@ -48,23 +48,12 @@ export default function Hero() {
         </div>
 
         <div className={styles.poster}>
-          <div className={styles.gridPattern} />
-          <div className={styles.blueShape} />
-
-          <div className={styles.photoFrame}>
-            <img
-              src="/images/roberio.png"
-              alt="Retrato de Robério Júnior"
-              className={styles.photo}
-            />
-          </div>
-
-          <span
-            className={styles.posterTop}
-            aria-hidden="true"
-          >
-            WEB / MOBILE / DEV
-          </span>
+          <img
+            src="/images/retrato.png"
+            alt="Retrato de Robério Júnior com elementos gráficos de programação"
+            className={styles.posterArtwork}
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>

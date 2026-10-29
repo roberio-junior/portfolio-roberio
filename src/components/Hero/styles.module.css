@@ -1,3 +1,4 @@
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -121,106 +122,54 @@
   transform: translateY(-3px);
 }
 
-.techLine {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-
-  margin-top: 42px;
-
-  color: var(--color-muted);
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* Composição gráfica da fotografia */
+/* Composição visual da coluna direita */
 
 .poster {
   position: relative;
   isolation: isolate;
 
   width: 100%;
-  max-width: 480px;
-  height: 500px;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
 
   margin: 0 auto;
 }
 
-.gridPattern {
-  position: absolute;
-  inset: 0;
-
-  opacity: 0.3;
-  z-index: -2;
-
-  background-image:
-    linear-gradient(
-      rgba(90, 122, 200, 0.16) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(90, 122, 200, 0.16) 1px,
-      transparent 1px
-    );
-
-  background-size: 36px 36px;
-  mask-image: radial-gradient(ellipse, black 30%, transparent 75%);
-}
-
-.blueShape {
-  position: absolute;
-  z-index: -1;
-
-  inset: 11% 8% 10% 12%;
-
-  background: linear-gradient(
-    145deg,
-    #3265ff,
-    #173aaf 60%,
-    #8b5cf6
-  );
-
-  border-radius: 40px;
-  transform: rotate(10deg);
-
-  box-shadow: 0 0 90px rgba(50, 101, 255, 0.28);
-}
-
-.photoFrame {
-  position: absolute;
-
-  overflow: hidden;
-}
-
-.photoFrame::after {
+.poster::before {
   content: '';
   position: absolute;
-  inset: 0;
+  z-index: -1;
+  inset: 9% -3% 8%;
+
   pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(24, 72, 220, 0.18),
+    transparent 70%
+  );
 }
 
-.photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.posterTop {
+.posterArtwork {
   position: absolute;
-  top: 2%;
-  left: 3%;
+  display: block;
 
-  color: #a9c0ff;
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  width: 116%;
+  height: auto;
+  max-width: none;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 20px 30px rgba(0, 0, 0, 0.16)
+  );
+
+  user-select: none;
+  pointer-events: none;
 }
 
 @media (max-width: 900px) {
@@ -236,8 +185,7 @@
   }
 
   .poster {
-    max-width: 450px;
-    height: 450px;
+    max-width: 500px;
   }
 }
 
@@ -269,20 +217,8 @@
     width: 100%;
   }
 
-  .poster {
-    height: 360px;
-  }
-
-  .posterCaption span {
-    font-size: 21px;
-  }
-
-  .posterCaption strong {
-    font-size: 36px;
-  }
-
-  .posterSymbol {
-    font-size: 52px;
+  .posterArtwork {
+    width: 108%;
   }
 }
 
