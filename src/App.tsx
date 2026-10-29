@@ -6,6 +6,7 @@ import ScrollManager from './components/ScrollManager';
 
 import Home from './pages/Home';
 import ProjectsCatalog from './pages/ProjectsCatalog';
+import ProjectDetails from './pages/ProjectDetails';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -17,10 +18,17 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route
             path="/projetos"
             element={<ProjectsCatalog />}
           />
+
+          <Route
+            path="/projetos/:slug"
+            element={<ProjectDetails />}
+          />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

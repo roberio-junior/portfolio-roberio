@@ -28,8 +28,6 @@ const projectIcons: Record<ProjectId, LucideIcon> = {
   promptsManager: Code2,
 };
 
-// Mantém o projeto principal primeiro e limita
-// a Home a quatro projetos.
 const highlightedProjects = [...projects]
   .sort(
     (a, b) =>
@@ -52,7 +50,11 @@ function HomeProjectCard({
     project.status === 'Em desenvolvimento';
 
   return (
-    <article className={styles.card}>
+    <Link
+      to={`/projetos/${project.slug}`}
+      className={styles.card}
+      aria-label={`Ver estudo de caso do projeto ${project.title}`}
+    >
       <div
         className={`${styles.cover} ${
           styles[project.id]
@@ -78,10 +80,7 @@ function HomeProjectCard({
             </span>
 
             <div className={styles.artworkSymbol}>
-              <Icon
-                size={65}
-                strokeWidth={1.4}
-              />
+              <Icon size={65} strokeWidth={1.4} />
             </div>
 
             <strong className={styles.artworkTitle}>
@@ -138,27 +137,16 @@ function HomeProjectCard({
         </ul>
 
         <div className={styles.cardFooter}>
-          {project.repositoryUrl ? (
-            <a
-              href={project.repositoryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.repositoryLink}
-            >
-              Ver código no GitHub
-              <ArrowUpRight
-                size={17}
-                aria-hidden="true"
-              />
-            </a>
-          ) : (
-            <span className={styles.pendingText}>
-              Estudo de caso em preparação
-            </span>
-          )}
+          <span className={styles.repositoryLink}>
+            Explorar estudo de caso
+            <ArrowUpRight
+              size={17}
+              aria-hidden="true"
+            />
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 

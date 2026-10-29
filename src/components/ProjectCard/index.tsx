@@ -1,4 +1,5 @@
 
+import { Link, useLocation } from 'react-router';
 import { ArrowUpRight } from 'lucide-react';
 
 import type { Project } from '../../data/projects';
@@ -14,11 +15,21 @@ export default function ProjectCard({
   project,
   isFeatured = project.featured,
 }: ProjectCardProps) {
+  const location = useLocation();
+
+  const from =
+    location.pathname === '/projetos'
+      ? `${location.pathname}${location.search}`
+      : '/projetos';
+
   return (
-    <article
+    <Link
+      to={`/projetos/${project.slug}`}
+      state={{ from }}
       className={`${styles.card} ${
         isFeatured ? styles.featured : ''
       }`}
+      aria-label={`Ver estudo de caso do projeto ${project.title}`}
     >
       <div
         className={`${styles.cover} ${styles[project.id]}`}
@@ -28,7 +39,7 @@ export default function ProjectCard({
             src={project.coverImage}
             alt={
               project.coverAlt ??
-              `Captura do projeto ${project.title}`
+              `Imagem do projeto ${project.title}`
             }
             className={styles.coverImage}
             loading="lazy"
@@ -98,23 +109,15 @@ export default function ProjectCard({
         </ul>
 
         <div className={styles.footer}>
-          {project.repositoryUrl ? (
-            <a
-              href={project.repositoryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.repositoryLink}
-            >
-              Ver código público
-              <ArrowUpRight size={17} />
-            </a>
-          ) : (
-            <span className={styles.comingSoon}>
-              Estudo de caso em breve
-            </span>
-          )}
+          <span className={styles.repositoryLink}>
+            Explorar estudo de caso
+            <ArrowUpRight
+              size={17}
+              aria-hidden="true"
+            />
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
