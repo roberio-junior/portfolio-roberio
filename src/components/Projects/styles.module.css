@@ -1,0 +1,574 @@
+
+/* ========================================
+   SEÇÃO PROJETOS
+======================================== */
+
+.section {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  padding: 104px 24px 112px;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 8%,
+      rgba(50, 101, 255, 0.1),
+      transparent 45%
+    ),
+    var(--color-background);
+
+  border-top: 1px solid var(--color-border);
+
+  scroll-margin-top: calc(
+    var(--header-height) + 20px
+  );
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   TÍTULO DA SEÇÃO
+======================================== */
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.headingContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.catalogLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 12px 18px;
+
+  color: #ffffff;
+  background: var(--color-primary);
+
+  border: 1px solid var(--color-primary);
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.catalogLink:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   GRID DE PROJETOS
+======================================== */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+  margin-top: 44px;
+
+  align-items: stretch;
+}
+
+/* ========================================
+   CARTÃO
+======================================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+
+  background: var(--color-surface);
+
+  border: 1px solid #2a3b55;
+  border-radius: 16px;
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  border-color: #5071b0;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   CAPA DO PROJETO
+======================================== */
+
+.cover {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid #2a3b55;
+}
+
+.coverImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Capa gráfica provisória */
+
+.artwork {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.artwork::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  opacity: 0.4;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+}
+
+.artwork::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    180deg,
+    transparent 20%,
+    rgba(4, 9, 22, 0.6)
+  );
+}
+
+.artworkIndex {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.artworkSymbol {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 115px;
+  height: 115px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.3);
+
+  border-radius: 28px;
+
+  transform: rotate(12deg);
+
+  transition: transform 220ms ease;
+}
+
+.card:hover .artworkSymbol {
+  transform: rotate(3deg) scale(1.04);
+}
+
+.artworkTitle {
+  position: absolute;
+  left: 22px;
+  right: 20px;
+  bottom: 42px;
+
+  color: white;
+
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+
+  overflow-wrap: anywhere;
+
+  text-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.artworkTitle span {
+  color: var(--color-accent);
+}
+
+.artworkLabel {
+  position: absolute;
+  left: 23px;
+  bottom: 16px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   CORES POR PROJETO
+======================================== */
+
+.peladahub {
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      #3265ff,
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      #102451,
+      #071225
+    );
+}
+
+.ondeta {
+  background:
+    radial-gradient(
+      circle at 78% 38%,
+      #15a9b2,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #133c52,
+      #081822
+    );
+}
+
+.ctMineral {
+  background:
+    radial-gradient(
+      circle at 80% 38%,
+      #d1913d,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #4b352a,
+      #111927
+    );
+}
+
+.promptsManager {
+  background:
+    radial-gradient(
+      circle at 80% 38%,
+      #8b5cf6,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #31215f,
+      #0d1326
+    );
+}
+
+/* ========================================
+   CONTEÚDO DO CARTÃO
+======================================== */
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  min-width: 0;
+  padding: 24px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.category {
+  color: #8caaff;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status {
+  padding: 6px 9px;
+
+  border: 1px solid;
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.inDevelopment {
+  color: #f4ff32;
+
+  background: rgba(244, 255, 50, 0.07);
+  border-color: rgba(244, 255, 50, 0.25);
+}
+
+.completed {
+  color: #80e3b0;
+
+  background: rgba(128, 227, 176, 0.07);
+  border-color: rgba(128, 227, 176, 0.25);
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+
+  overflow: hidden;
+
+  margin: 0 0 20px;
+
+  color: var(--color-muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   TECNOLOGIAS
+======================================== */
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.technology {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 28px;
+  padding: 5px 9px;
+
+  color: #cbd8f0;
+
+  background: #1b2a40;
+
+  border: 1px solid #30435f;
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ========================================
+   RODAPÉ DO CARTÃO
+======================================== */
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 16px;
+
+  border-top: 1px solid #2a3b55;
+}
+
+.repositoryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #8caaff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: color 180ms ease;
+}
+
+.repositoryLink:hover {
+  color: var(--color-accent);
+}
+
+.pendingText {
+  color: #8394ae;
+  font-size: 12px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 24px;
+  }
+
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .artworkTitle {
+    font-size: 32px;
+  }
+
+  .artworkSymbol {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+@media (max-width: 680px) {
+  .section {
+    padding: 68px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .cover {
+    height: 190px;
+  }
+
+  .catalogLink {
+    width: 100%;
+  }
+
+  .cardBody {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .artworkTitle {
+    font-size: 30px;
+  }
+
+  .artworkSymbol {
+    right: 20px;
+
+    width: 85px;
+    height: 85px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .artworkSymbol,
+  .catalogLink,
+  .repositoryLink {
+    transition: none;
+  }
+
+  .card:hover,
+  .catalogLink:hover {
+    transform: none;
+  }
+
+  .card:hover .artworkSymbol {
+    transform: rotate(12deg);
+  }
+}

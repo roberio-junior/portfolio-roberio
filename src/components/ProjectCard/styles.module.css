@@ -1,0 +1,318 @@
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--color-surface);
+  border: 1px solid #2a3b55;
+  border-radius: 18px;
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #4d6ca5;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+}
+
+/* Capa gráfica */
+
+.cover {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid #2a3b55;
+}
+
+.featured .cover {
+  height: 310px;
+}
+
+.posterArtwork {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.posterGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+}
+
+.posterTop,
+.posterBottom {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.posterTop {
+  top: 23px;
+}
+
+.posterBottom {
+  bottom: 22px;
+}
+
+.posterCircle {
+  position: absolute;
+  z-index: 0;
+
+  width: 225px;
+  height: 225px;
+  top: 50%;
+  right: 8%;
+
+  transform: translateY(-50%) rotate(22deg);
+  border: 34px solid rgba(255, 255, 255, 0.17);
+  border-radius: 34%;
+}
+
+.posterTitle {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  bottom: 57px;
+
+  max-width: calc(100% - 50px);
+
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3vw, 52px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  overflow-wrap: anywhere;
+
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.posterTitle span {
+  color: var(--color-accent);
+}
+
+.featured .posterTitle {
+  font-size: clamp(52px, 6vw, 95px);
+}
+
+.coverImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Variações por projeto */
+
+.peladahub {
+  background:
+    radial-gradient(
+      circle at 78% 43%,
+      #4b7dff,
+      transparent 42%
+    ),
+    linear-gradient(135deg, #102451, #081326);
+}
+
+.ondeta {
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      #20b3b1,
+      transparent 45%
+    ),
+    linear-gradient(135deg, #102f48, #081621);
+}
+
+.ctMineral {
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      #d49a45,
+      transparent 44%
+    ),
+    linear-gradient(135deg, #3b2b23, #111a2a);
+}
+
+.promptsManager {
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      #8b5cf6,
+      transparent 45%
+    ),
+    linear-gradient(135deg, #2c2158, #0d1329);
+}
+
+/* Conteúdo do cartão */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 27px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+.category {
+  color: #8eaaff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.status {
+  padding: 6px 9px;
+  border: 1px solid;
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.inDevelopment {
+  color: #f4ff32;
+  border-color: rgba(244, 255, 50, 0.25);
+  background: rgba(244, 255, 50, 0.07);
+}
+
+.completed {
+  color: #80e3b0;
+  border-color: rgba(128, 227, 176, 0.25);
+  background: rgba(128, 227, 176, 0.07);
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.featured .title {
+  font-size: 33px;
+}
+
+.description {
+  margin: 0 0 23px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.technology {
+  padding: 7px 10px;
+  background: #1b2a40;
+  border: 1px solid #30435f;
+  border-radius: 6px;
+
+  color: #d0daf0;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #30415c;
+}
+
+.repositoryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #8eaaff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.repositoryLink:hover {
+  color: var(--color-accent);
+}
+
+.comingSoon {
+  color: #8294b2;
+  font-size: 12px;
+}
+
+@media (max-width: 620px) {
+  .featured .cover {
+    height: 240px;
+  }
+
+  .posterTitle {
+    font-size: 37px;
+  }
+
+  .featured .posterTitle {
+    font-size: 51px;
+  }
+
+  .content {
+    padding: 22px;
+  }
+
+  .title,
+  .featured .title {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
