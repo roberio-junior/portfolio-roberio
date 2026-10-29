@@ -1,0 +1,138 @@
+
+.footer {
+  width: 100%;
+  padding: 46px 24px 22px;
+
+  background: #080d16;
+  border-top: 1px solid var(--color-border);
+
+  scroll-margin-top: var(--header-height);
+  overflow-x: clip;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding-bottom: 40px;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logo {
+  width: fit-content;
+
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.identity p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.contacts a,
+.backToTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #b9c6da;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: color 180ms ease;
+}
+
+.contacts a:hover,
+.backToTop:hover {
+  color: var(--color-primary-hover);
+}
+
+.bottom {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 22px;
+}
+
+/* Linha divisória com largura total da tela */
+
+.bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 100vw;
+  height: 1px;
+
+  background: var(--color-border);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.bottom small {
+  color: #8292a9;
+  font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .footer {
+    padding: 36px 20px 22px;
+  }
+
+  .main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 26px;
+    padding-bottom: 32px;
+  }
+
+  .contacts {
+    gap: 16px 24px;
+  }
+
+  .bottom {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacts a,
+  .backToTop {
+    transition: none;
+  }
+}
