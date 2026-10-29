@@ -14,36 +14,9 @@
   max-width: var(--container-width);
   height: 100%;
   margin: 0 auto;
-  padding: 0 24px;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.8px;
-}
-
-.logoSymbol {
-  display: grid;
-  place-items: center;
-
-  width: 42px;
-  height: 42px;
-
-  background: var(--color-primary);
-  border-radius: 10px;
-
-  color: white;
-  font-size: 24px;
+  justify-content: right;
 }
 
 .navigation {

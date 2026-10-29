@@ -8,13 +8,10 @@ export default function Hero() {
     <section id="inicio" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>
-            PORTFÓLIO / DESENVOLVIMENTO
-          </span>
 
           <h1 className={styles.title}>
             Olá, eu sou
-            <span>Robério!</span>
+            <span>Robério Júnior!</span>
           </h1>
 
           <h2 className={styles.subtitle}>

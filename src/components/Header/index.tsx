@@ -32,14 +32,6 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link
-          to="/#inicio"
-          className={styles.logo}
-          onClick={closeMenu}
-        >
-          <span className={styles.logoSymbol}>R</span>
-          <span>ROBÉRIO_</span>
-        </Link>
 
         <button
           type="button"
