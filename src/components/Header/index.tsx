@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-
 import { Link } from 'react-router';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
@@ -32,22 +31,32 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
+        <Link
+          to="/#inicio"
+          className={styles.logo}
+          aria-label="Robério Júnior - Voltar ao início"
+          onClick={closeMenu}
+        >
+          <span className={styles.logoSyntax} aria-hidden="true">
+            &lt;
+          </span>
+          <span className={styles.logoText} aria-hidden="true">
+            RJr
+          </span>
+          <span className={styles.logoSyntax} aria-hidden="true">
+            /&gt;
+          </span>
+        </Link>
 
         <button
           type="button"
           className={styles.menuButton}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={
-            menuOpen ? 'Fechar menu' : 'Abrir menu'
-          }
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuOpen}
           aria-controls="main-navigation"
         >
-          {menuOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         <nav
@@ -57,10 +66,6 @@ export default function Header() {
             menuOpen ? styles.navigationOpen : ''
           }`}
         >
-          <Link to="/#inicio" onClick={closeMenu}>
-            Início
-          </Link>
-
           <Link to="/#sobre" onClick={closeMenu}>
             Sobre
           </Link>
@@ -91,7 +96,8 @@ export default function Header() {
             className={styles.contactButton}
             onClick={closeMenu}
           >
-            Contato <ArrowUpRight size={16} />
+            Contato
+            <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </nav>
       </div>

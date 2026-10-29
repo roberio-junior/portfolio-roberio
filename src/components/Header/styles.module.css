@@ -1,3 +1,4 @@
+
 .header {
   position: sticky;
   top: 0;
@@ -16,8 +17,41 @@
   margin: 0 auto;
 
   display: flex;
-  justify-content: right;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
+
+/* Logotipo */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+
+  transition: opacity 180ms ease;
+}
+
+.logoSyntax {
+  color: var(--color-accent);
+}
+
+.logoText {
+  color: var(--color-text);
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* Navegação */
 
 .navigation {
   display: flex;
@@ -34,6 +68,8 @@
 .navigation > a:hover {
   color: var(--color-primary-hover);
 }
+
+/* Botão de contato */
 
 .navigation .contactButton {
   display: inline-flex;
@@ -59,6 +95,8 @@
   transform: translateY(-2px);
 }
 
+/* Menu mobile */
+
 .menuButton {
   display: none;
   align-items: center;
@@ -73,13 +111,15 @@
   border-radius: 9px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1240px) {
   .container {
     padding: 0 20px;
   }
+}
 
+@media (max-width: 1000px) {
   .logo {
-    font-size: 19px;
+    font-size: 26px;
   }
 
   .menuButton {
@@ -124,6 +164,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .logo,
   .navigation > a,
   .navigation .contactButton {
     transition: none;
