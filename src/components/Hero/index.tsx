@@ -19,10 +19,7 @@ export default function Hero() {
           </h2>
 
           <p className={styles.description}>
-            Sou estudante de Tecnologia em Sistemas para
-            Internet no IFRN, com experiência prática no
-            desenvolvimento de aplicações web e mobile,
-            integração de APIs e uso de bancos de dados.
+            Sou estudante de Tecnologia em Sistemas para Internet no IFRN, com experiência no desenvolvimento de aplicações web e mobile. Meu foco está na criação de interfaces funcionais e na integração entre aplicações, APIs e bancos de dados.
           </p>
 
           <div className={styles.actions}>
