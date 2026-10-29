@@ -45,14 +45,6 @@ export default function Hero() {
               Entrar em contato
             </a>
           </div>
-
-          <div className={styles.techLine}>
-            <span>REACT NATIVE</span>
-            <span className={styles.separator}>/</span>
-            <span>TYPESCRIPT</span>
-            <span className={styles.separator}>/</span>
-            <span>NESTJS</span>
-          </div>
         </div>
 
         <div className={styles.poster}>
@@ -61,7 +53,7 @@ export default function Hero() {
 
           <div className={styles.photoFrame}>
             <img
-              src="/images/roberio.jpg"
+              src="/images/roberio.png"
               alt="Retrato de Robério Júnior"
               className={styles.photo}
             />
@@ -73,28 +65,6 @@ export default function Hero() {
           >
             WEB / MOBILE / DEV
           </span>
-
-          <span
-            className={styles.posterSymbol}
-            aria-hidden="true"
-          >
-            ✳
-          </span>
-
-          <div
-            className={styles.posterCaption}
-            aria-hidden="true"
-          >
-            <span>CRIANDO</span>
-            <strong>SOLUÇÕES_</strong>
-          </div>
-
-          <div
-            className={styles.posterIndex}
-            aria-hidden="true"
-          >
-            01 / PORTFÓLIO
-          </div>
         </div>
       </div>
     </section>
