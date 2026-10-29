@@ -96,7 +96,7 @@ export default function Header() {
             className={styles.contactButton}
             onClick={closeMenu}
           >
-            Contato
+            Entrar em contato
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </nav>
