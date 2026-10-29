@@ -1,0 +1,158 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  height: var(--header-height);
+  background: rgba(6, 11, 20, 0.94);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.logoSymbol {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: var(--color-primary);
+  border-radius: 10px;
+
+  color: white;
+  font-size: 24px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigation > a {
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.navigation > a:hover {
+  color: var(--color-primary-hover);
+}
+
+.navigation .contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  color: white;
+  background: var(--color-primary);
+  border-radius: 9px;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.navigation .contactButton:hover {
+  color: white;
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .navigation {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  }
+
+  .navigationOpen {
+    display: flex;
+  }
+
+  .navigation > a {
+    display: flex;
+    align-items: center;
+
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+
+  .navigation .contactButton {
+    margin-top: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation > a,
+  .navigation .contactButton {
+    transition: none;
+  }
+}
