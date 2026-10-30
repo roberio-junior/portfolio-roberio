@@ -1,26 +1,30 @@
 
+import { Layers2 } from 'lucide-react';
+
 import SectionHeading from '../SectionHeading';
 
 import styles from './styles.module.css';
 
-const trajectory = [
+const summary = [
   {
-    number: '01',
-    category: 'FORMAÇÃO TÉCNICA',
+    label: 'FORMAÇÃO TÉCNICA',
     title: 'Manutenção e Suporte em Informática',
-    description: 'IFRN · Curso técnico integrado',
+    description: 'IFRN · Concluído',
   },
   {
-    number: '02',
-    category: 'GRADUAÇÃO',
+    label: 'GRADUAÇÃO',
     title: 'Tecnologia em Sistemas para Internet',
     description: 'IFRN · Em andamento',
   },
   {
-    number: '03',
-    category: 'DESENVOLVIMENTO',
-    title: 'Projetos Web e Mobile',
-    description: 'Aplicações, APIs e bancos de dados',
+    label: 'ÁREA DE ATUAÇÃO',
+    title: 'Web & Mobile',
+    description: 'Interfaces, APIs e bancos de dados',
+  },
+  {
+    label: 'PROPÓSITO',
+    title: 'Soluções para necessidades reais',
+    description: 'Projetos acadêmicos e pessoais',
   },
 ];
 
@@ -73,42 +77,33 @@ export default function About() {
         </div>
 
         <aside
-          className={styles.trajectoryCard}
-          aria-label="Resumo da trajetória acadêmica e técnica"
+          className={styles.summaryPanel}
+          aria-label="Resumo profissional"
         >
-          <div className={styles.cardHeader}>
-            <span>TRAJETÓRIA_</span>
-            <span className={styles.cardSymbol}>
-              ✳
-            </span>
+          <div className={styles.panelHeader}>
+            <span>PERFIL EM RESUMO</span>
+            <Layers2 size={22} aria-hidden="true" />
           </div>
 
-          <div className={styles.timeline}>
-            {trajectory.map((item) => (
-              <div
-                key={item.number}
-                className={styles.timelineItem}
+          <div className={styles.summaryGrid}>
+            {summary.map((item) => (
+              <article
+                key={item.label}
+                className={styles.summaryItem}
               >
-                <span className={styles.number}>
-                  {item.number}
+                <span className={styles.itemLabel}>
+                  {item.label}
                 </span>
 
-                <div className={styles.itemContent}>
-                  <span className={styles.category}>
-                    {item.category}
-                  </span>
+                <h3 className={styles.itemTitle}>
+                  {item.title}
+                </h3>
 
-                  <h3>{item.title}</h3>
-
-                  <p>{item.description}</p>
-                </div>
-              </div>
+                <p className={styles.itemDescription}>
+                  {item.description}
+                </p>
+              </article>
             ))}
-          </div>
-
-          <div className={styles.cardFooter}>
-            <span>IFRN / TECNOLOGIA</span>
-            <span>↗</span>
           </div>
         </aside>
       </div>
