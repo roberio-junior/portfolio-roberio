@@ -25,10 +25,6 @@
   line-height: 1.1;
 }
 
-.accent {
-  color: var(--color-primary);
-}
-
 .description {
   max-width: 620px;
   margin: 4px 0 0;
