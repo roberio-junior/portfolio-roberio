@@ -89,24 +89,6 @@ export default function Skills() {
             );
           })}
         </div>
-
-        <div className={styles.footer}>
-          <span className={styles.footerSymbol} aria-hidden="true">
-            ✳
-          </span>
-
-          <div>
-            <span className={styles.footerLabel}>
-              DESENVOLVIMENTO CONTÍNUO
-            </span>
-
-            <p>
-              Cada projeto é uma oportunidade de aplicar
-              conhecimentos, explorar tecnologias e
-              aprimorar minhas habilidades.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
