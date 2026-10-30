@@ -67,13 +67,6 @@ export default function About() {
               reais.
             </p>
           </div>
-
-          <div className={styles.signature}>
-            <span className={styles.signatureLine} />
-            <span>
-              DESENVOLVIMENTO WEB & MOBILE
-            </span>
-          </div>
         </div>
 
         <aside
