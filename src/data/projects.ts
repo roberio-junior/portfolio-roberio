@@ -48,6 +48,8 @@ export const projects: Project[] = [
     ],
     status: 'Em desenvolvimento',
     featured: true,
+    coverImage: '/images/projects/PeladaHub.png',
+    coverAlt: 'Apresentação visual do APP PeladaHub',
   },
   {
     id: 'ondeta',
@@ -65,7 +67,9 @@ export const projects: Project[] = [
       'React Native',
     ],
     status: 'Concluído',
-    featured: false,
+    featured: false, 
+    coverImage: '/images/projects/OndeTa.png',
+    coverAlt: 'Apresentação visual do APP OndeTá',
   },
   {
     id: 'ctMineral',
@@ -83,6 +87,8 @@ export const projects: Project[] = [
     ],
     status: 'Concluído',
     featured: false,
+    coverImage: '/images/projects/CTMineral.png',
+    coverAlt: 'Apresentação visual da plataforma web CT Mineral',
   },
   {
     id: 'promptsManager',
