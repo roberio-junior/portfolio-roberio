@@ -28,12 +28,11 @@ const projectIcons: Record<ProjectId, LucideIcon> = {
   promptsManager: Code2,
 };
 
-const highlightedProjects = [...projects]
-  .sort(
-    (a, b) =>
-      Number(b.featured) - Number(a.featured)
-  )
-  .slice(0, 4);
+// Mantém a ordem cadastrada, sem priorizar
+// nenhum projeto pelo campo featured.
+const selectedProjects = projects.filter(
+  (project) => project.id !== 'promptsManager'
+);
 
 interface HomeProjectCardProps {
   project: Project;
@@ -65,7 +64,7 @@ function HomeProjectCard({
             src={project.coverImage}
             alt={
               project.coverAlt ??
-              `Imagem do projeto ${project.title}`
+              `Apresentação visual do projeto ${project.title}`
             }
             className={styles.coverImage}
             loading="lazy"
@@ -80,17 +79,8 @@ function HomeProjectCard({
             </span>
 
             <div className={styles.artworkSymbol}>
-              <Icon size={65} strokeWidth={1.4} />
+              <Icon size={64} strokeWidth={1.4} />
             </div>
-
-            <strong className={styles.artworkTitle}>
-              {project.title}
-              <span>_</span>
-            </strong>
-
-            <span className={styles.artworkLabel}>
-              {project.categoryLabel}
-            </span>
           </div>
         )}
       </div>
@@ -140,7 +130,7 @@ function HomeProjectCard({
           <span className={styles.repositoryLink}>
             Explorar estudo de caso
             <ArrowUpRight
-              size={17}
+              size={18}
               aria-hidden="true"
             />
           </span>
@@ -180,15 +170,13 @@ export default function Projects() {
         </div>
 
         <div className={styles.grid}>
-          {highlightedProjects.map(
-            (project, index) => (
-              <HomeProjectCard
-                key={project.id}
-                project={project}
-                position={index}
-              />
-            )
-          )}
+          {selectedProjects.map((project, index) => (
+            <HomeProjectCard
+              key={project.id}
+              project={project}
+              position={index}
+            />
+          ))}
         </div>
       </div>
     </section>

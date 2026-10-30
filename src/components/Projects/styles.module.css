@@ -1,7 +1,5 @@
 
-/* ========================================
-   SEÇÃO PROJETOS
-======================================== */
+/* Seção */
 
 .section {
   position: relative;
@@ -13,7 +11,7 @@
   background:
     radial-gradient(
       ellipse at 90% 8%,
-      rgba(50, 101, 255, 0.1),
+      rgba(50, 101, 255, 0.08),
       transparent 45%
     ),
     var(--color-background);
@@ -31,9 +29,7 @@
   margin: 0 auto;
 }
 
-/* ========================================
-   TÍTULO DA SEÇÃO
-======================================== */
+/* Título e botão de catálogo */
 
 .heading {
   display: flex;
@@ -59,7 +55,6 @@
 
   color: #ffffff;
   background: var(--color-primary);
-
   border: 1px solid var(--color-primary);
   border-radius: 9px;
 
@@ -67,35 +62,25 @@
   font-weight: 700;
   white-space: nowrap;
 
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
+  transition: background-color 180ms ease;
 }
 
 .catalogLink:hover {
   background: var(--color-primary-hover);
-  transform: translateY(-2px);
 }
 
-/* ========================================
-   GRID DE PROJETOS
-======================================== */
+/* Grid */
 
 .grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 24px;
-  margin-top: 44px;
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
+
+  gap: 20px;
+  margin-top: 44px;
 }
 
-/* ========================================
-   CARTÃO
-======================================== */
+/* Card */
 
 .card {
   display: flex;
@@ -106,35 +91,27 @@
   overflow: hidden;
 
   background: var(--color-surface);
-
   border: 1px solid #2a3b55;
   border-radius: 16px;
 
   transition:
-    transform 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease;
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-
   border-color: #5071b0;
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 }
 
-/* ========================================
-   CAPA DO PROJETO
-======================================== */
+/* Capa */
 
 .cover {
   position: relative;
+  flex-shrink: 0;
 
   width: 100%;
-  height: 190px;
-
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 
   border-bottom: 1px solid #2a3b55;
@@ -148,13 +125,16 @@
 
   object-fit: cover;
   object-position: center;
+
+  transition: transform 250ms ease;
 }
 
-/* Capa gráfica provisória */
+/* Capa provisória */
 
 .artwork {
   position: relative;
-  isolation: isolate;
+  display: grid;
+  place-items: center;
 
   width: 100%;
   height: 100%;
@@ -164,182 +144,96 @@
 
 .artwork::before {
   content: '';
-
   position: absolute;
   inset: 0;
-  z-index: -1;
 
-  opacity: 0.4;
+  opacity: 0.25;
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.07) 1px,
+      rgba(255, 255, 255, 0.06) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.07) 1px,
+      rgba(255, 255, 255, 0.06) 1px,
       transparent 1px
     );
 
-  background-size: 30px 30px;
-}
-
-.artwork::after {
-  content: '';
-
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-
-  background: linear-gradient(
-    180deg,
-    transparent 20%,
-    rgba(4, 9, 22, 0.6)
-  );
+  background-size: 32px 32px;
 }
 
 .artworkIndex {
   position: absolute;
-  top: 18px;
-  left: 22px;
+  top: 20px;
+  left: 24px;
 
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
 
   font-family: var(--font-heading);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 
 .artworkSymbol {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  display: grid;
+  place-items: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 115px;
-  height: 115px;
+  width: 104px;
+  height: 104px;
 
   color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
 
-  border: 2px solid
-    rgba(255, 255, 255, 0.3);
-
-  border-radius: 28px;
-
-  transform: rotate(12deg);
-
-  transition: transform 220ms ease;
+  transform: rotate(-6deg);
 }
 
-.card:hover .artworkSymbol {
-  transform: rotate(3deg) scale(1.04);
-}
-
-.artworkTitle {
-  position: absolute;
-  left: 22px;
-  right: 20px;
-  bottom: 42px;
-
-  color: white;
-
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  line-height: 1.05;
-
-  overflow-wrap: anywhere;
-
-  text-shadow:
-    0 3px 14px rgba(0, 0, 0, 0.4);
-}
-
-.artworkTitle span {
-  color: var(--color-accent);
-}
-
-.artworkLabel {
-  position: absolute;
-  left: 23px;
-  bottom: 16px;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* ========================================
-   CORES POR PROJETO
-======================================== */
+/* Identidade de cada projeto */
 
 .peladahub {
   background:
     radial-gradient(
-      circle at 80% 40%,
+      circle at 75% 40%,
       #3265ff,
-      transparent 48%
+      transparent 55%
     ),
-    linear-gradient(
-      135deg,
-      #102451,
-      #071225
-    );
+    linear-gradient(135deg, #102451, #071225);
 }
 
 .ondeta {
   background:
     radial-gradient(
-      circle at 78% 38%,
+      circle at 75% 40%,
       #15a9b2,
-      transparent 50%
+      transparent 55%
     ),
-    linear-gradient(
-      135deg,
-      #133c52,
-      #081822
-    );
+    linear-gradient(135deg, #133c52, #081822);
 }
 
 .ctMineral {
   background:
     radial-gradient(
-      circle at 80% 38%,
+      circle at 75% 40%,
       #d1913d,
-      transparent 50%
+      transparent 55%
     ),
-    linear-gradient(
-      135deg,
-      #4b352a,
-      #111927
-    );
+    linear-gradient(135deg, #4b352a, #111927);
 }
 
 .promptsManager {
   background:
     radial-gradient(
-      circle at 80% 38%,
+      circle at 75% 40%,
       #8b5cf6,
-      transparent 50%
+      transparent 55%
     ),
-    linear-gradient(
-      135deg,
-      #31215f,
-      #0d1326
-    );
+    linear-gradient(135deg, #31215f, #0d1326);
 }
 
-/* ========================================
-   CONTEÚDO DO CARTÃO
-======================================== */
+/* Corpo do card */
 
 .cardBody {
   display: flex;
@@ -347,7 +241,7 @@
   flex: 1;
 
   min-width: 0;
-  padding: 24px;
+  padding: 20px;
 }
 
 .meta {
@@ -357,7 +251,7 @@
   flex-wrap: wrap;
 
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .category {
@@ -369,29 +263,31 @@
   text-transform: uppercase;
 }
 
+/* Status */
+
 .status {
   padding: 6px 9px;
 
   border: 1px solid;
   border-radius: 6px;
 
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .inDevelopment {
   color: #f4ff32;
-
   background: rgba(244, 255, 50, 0.07);
   border-color: rgba(244, 255, 50, 0.25);
 }
 
 .completed {
   color: #80e3b0;
-
   background: rgba(128, 227, 176, 0.07);
   border-color: rgba(128, 227, 176, 0.25);
 }
+
+/* Título e descrição */
 
 .cardTitle {
   margin: 0 0 10px;
@@ -399,9 +295,10 @@
   color: var(--color-text);
 
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.7px;
+  line-height: 1.3;
 }
 
 .description {
@@ -412,24 +309,22 @@
 
   overflow: hidden;
 
-  margin: 0 0 20px;
+  margin: 0 0 16px;
 
   color: var(--color-muted);
 
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-/* ========================================
-   TECNOLOGIAS
-======================================== */
+/* Tecnologias */
 
 .technologies {
   display: flex;
   flex-wrap: wrap;
 
   gap: 8px;
-  margin: 0 0 20px;
+  margin: auto 0 0;
   padding: 0;
 
   list-style: none;
@@ -443,7 +338,6 @@
   padding: 5px 9px;
 
   color: #cbd8f0;
-
   background: #1b2a40;
 
   border: 1px solid #30435f;
@@ -453,23 +347,22 @@
   font-weight: 600;
 }
 
-/* ========================================
-   RODAPÉ DO CARTÃO
-======================================== */
+/* Rodapé */
 
 .cardFooter {
-  margin-top: auto;
+  margin-top: 22px;
   padding-top: 16px;
 
-  border-top: 1px solid #2a3b55;
+  border-top: 1px solid #30415c;
 }
 
 .repositoryLink {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 12px;
 
-  color: #8caaff;
+  color: #c4d2ff;
 
   font-size: 13px;
   font-weight: 700;
@@ -477,18 +370,24 @@
   transition: color 180ms ease;
 }
 
-.repositoryLink:hover {
+.card:hover .repositoryLink {
   color: var(--color-accent);
 }
 
-.pendingText {
-  color: #8394ae;
-  font-size: 12px;
+/* Efeitos para dispositivos com mouse */
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .coverImage {
+    transform: scale(1.025);
+  }
 }
 
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
+/* Responsividade */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 900px) {
   .section {
@@ -504,15 +403,6 @@
   .grid {
     gap: 20px;
   }
-
-  .artworkTitle {
-    font-size: 32px;
-  }
-
-  .artworkSymbol {
-    width: 95px;
-    height: 95px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -525,10 +415,6 @@
     margin-top: 32px;
   }
 
-  .cover {
-    height: 190px;
-  }
-
   .catalogLink {
     width: 100%;
   }
@@ -539,36 +425,25 @@
 }
 
 @media (max-width: 420px) {
-  .artworkTitle {
-    font-size: 30px;
+  .cardTitle {
+    font-size: 23px;
   }
 
   .artworkSymbol {
-    right: 20px;
-
-    width: 85px;
-    height: 85px;
-  }
-
-  .cardTitle {
-    font-size: 22px;
+    width: 86px;
+    height: 86px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card,
-  .artworkSymbol,
+  .coverImage,
   .catalogLink,
   .repositoryLink {
     transition: none;
   }
 
-  .card:hover,
-  .catalogLink:hover {
+  .card:hover .coverImage {
     transform: none;
-  }
-
-  .card:hover .artworkSymbol {
-    transform: rotate(12deg);
   }
 }
