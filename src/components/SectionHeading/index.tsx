@@ -14,7 +14,6 @@ export default function SectionHeading({
     <div className={styles.container}>
       <h2 className={styles.title}>
         {title}
-        <span className={styles.accent}>_</span>
       </h2>
 
       {description && (

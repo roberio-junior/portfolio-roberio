@@ -1,6 +1,6 @@
 
 import { Link, useSearchParams } from 'react-router';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 import ProjectCard from '../../components/ProjectCard';
 import SectionHeading from '../../components/SectionHeading';
@@ -61,16 +61,10 @@ export default function ProjectsCatalog() {
           Voltar aos destaques
         </Link>
 
-        <div className={styles.heading}>
-          <SectionHeading
-            title="Todos os projetos"
-            description="Explore os projetos que desenvolvi nas áreas de desenvolvimento web, mobile, backend e sistemas embarcados."
-          />
-
-          <div className={styles.decorativeSymbol}>
-            ✳
-          </div>
-        </div>
+        <SectionHeading
+          title="Meus projetos"
+          description="Explore os projetos que desenvolvi nas áreas de desenvolvimento web, mobile, backend e sistemas embarcados."
+        />
 
         <div className={styles.filterSection}>
           <div className={styles.filterHeader}>
@@ -132,22 +126,6 @@ export default function ProjectsCatalog() {
             </button>
           </div>
         )}
-
-        <div className={styles.bottomBanner}>
-          <div>
-            <span className={styles.bannerLabel}>
-              CONTINUA EM EVOLUÇÃO
-            </span>
-
-            <p>
-              Novos projetos poderão ser adicionados
-              conforme minha trajetória profissional
-              e acadêmica avançar.
-            </p>
-          </div>
-
-          <ArrowUpRight size={28} aria-hidden="true" />
-        </div>
       </div>
     </div>
   );
