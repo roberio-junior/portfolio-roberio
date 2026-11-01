@@ -108,5 +108,8 @@ export const projects: Project[] = [
     featured: false,
     repositoryUrl:
       'https://github.com/roberio-junior/prompts-manager',
+
+    coverImage: '/images/projects/prompts.png',
+    coverAlt: 'Apresentação visual do APP PeladaHub',
   },
 ];
