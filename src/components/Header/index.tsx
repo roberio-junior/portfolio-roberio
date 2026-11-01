@@ -66,16 +66,16 @@ export default function Header() {
             menuOpen ? styles.navigationOpen : ''
           }`}
         >
+          <Link to="/#inicio" onClick={closeMenu}>
+            Início
+          </Link>
+
           <Link to="/#sobre" onClick={closeMenu}>
             Sobre
           </Link>
 
           <Link to="/#tecnologias" onClick={closeMenu}>
             Tecnologias
-          </Link>
-
-          <Link to="/#projetos" onClick={closeMenu}>
-            Destaques
           </Link>
 
           <Link to="/projetos" onClick={closeMenu}>
