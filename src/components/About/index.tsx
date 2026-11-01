@@ -39,7 +39,6 @@ export default function About() {
         <div className={styles.content}>
           <div id="sobre-title">
             <SectionHeading
-              eyebrow="01 / QUEM SOU"
               title="Sobre mim"
             />
           </div>

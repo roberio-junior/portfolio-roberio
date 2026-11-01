@@ -151,7 +151,6 @@ export default function Projects() {
         <div className={styles.heading}>
           <div className={styles.headingContent}>
             <SectionHeading
-              eyebrow="03 / TRABALHOS SELECIONADOS"
               title="Projetos em destaque"
               description="Uma seleção de projetos que desenvolvi nas áreas de desenvolvimento web, mobile e IoT."
             />

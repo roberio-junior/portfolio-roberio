@@ -63,7 +63,6 @@ export default function ProjectsCatalog() {
 
         <div className={styles.heading}>
           <SectionHeading
-            eyebrow="PORTFÓLIO / PROJETOS"
             title="Todos os projetos"
             description="Explore os projetos que desenvolvi nas áreas de desenvolvimento web, mobile, backend e sistemas embarcados."
           />

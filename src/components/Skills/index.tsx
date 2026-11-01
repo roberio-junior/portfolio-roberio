@@ -38,7 +38,6 @@ export default function Skills() {
       <div className={styles.container}>
         <div id="tecnologias-title">
           <SectionHeading
-            eyebrow="02 / MINHA STACK"
             title="Tecnologias"
             description="Ferramentas e tecnologias que utilizo no desenvolvimento de aplicações web, mobile e outros projetos."
           />
