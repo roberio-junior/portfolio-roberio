@@ -1,6 +1,6 @@
 
 import { Link, useSearchParams } from 'react-router';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Plus } from 'lucide-react';
 
 import ProjectCard from '../../components/ProjectCard';
 import SectionHeading from '../../components/SectionHeading';
@@ -110,6 +110,30 @@ export default function ProjectsCatalog() {
                 isFeatured={false}
               />
             ))}
+
+            {activeFilter === 'todos' && (
+              <div className={styles.moreCard}>
+                <div className={styles.moreIcon}>
+                  <Plus
+                    size={28}
+                    strokeWidth={1.6}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <div className={styles.moreContent}>
+                  <h3 className={styles.moreTitle}>
+                    Mais projetos em breve
+                    <span>_</span>
+                  </h3>
+
+                  <p className={styles.moreDescription}>
+                    Novos trabalhos serão adicionados conforme
+                    meus projetos avançarem.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div className={styles.emptyState}>
