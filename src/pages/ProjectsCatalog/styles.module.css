@@ -154,16 +154,17 @@
 /* Card de futuros projetos */
 
 .moreCard {
-  grid-column: 1 / -1;
+  grid-column: span 1;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: center;
+  gap: 16px;
 
-  min-height: 110px;
-  padding: 22px 28px;
+  min-height: 260px;
+  padding: 36px;
+  text-align: center;
 
   background: #101a2b;
   border: 1px dashed #405476;
@@ -187,8 +188,8 @@
 .moreContent {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
 }
 
 .moreTitle {
@@ -206,11 +207,37 @@
 }
 
 .moreDescription {
+  max-width: 350px;
   margin: 0;
 
   color: var(--color-muted);
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* Versão compacta quando a quantidade de projetos é múltipla de 3 */
+
+@media (min-width: 1101px) {
+  .moreCard:last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+
+    min-height: 110px;
+    padding: 22px 28px;
+    text-align: left;
+  }
+
+  .moreCard:last-child:nth-child(3n + 1) .moreContent {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .moreCard:last-child:nth-child(3n + 1) .moreDescription {
+    max-width: none;
+  }
 }
 
 /* Responsividade */
