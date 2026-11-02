@@ -48,7 +48,7 @@ export const projects: Project[] = [
     ],
     status: 'Em desenvolvimento',
     featured: true,
-    coverImage: '/images/projects/PeladaHub.png',
+    coverImage: '/images/projects/PeladaHub.webp',
     coverAlt: 'Apresentação visual do APP PeladaHub',
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     ],
     status: 'Concluído',
     featured: false, 
-    coverImage: '/images/projects/OndeTa.png',
+    coverImage: '/images/projects/OndeTa.webp',
     coverAlt: 'Apresentação visual do APP OndeTá',
   },
   {
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     ],
     status: 'Concluído',
     featured: false,
-    coverImage: '/images/projects/CTMineral.png',
+    coverImage: '/images/projects/CTMineral.webp',
     coverAlt: 'Apresentação visual da plataforma web CT Mineral',
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     repositoryUrl:
       'https://github.com/roberio-junior/prompts-manager',
 
-    coverImage: '/images/projects/prompts.png',
+    coverImage: '/images/projects/prompts.webp',
     coverAlt: 'Apresentação visual do APP PeladaHub',
   },
 ];
