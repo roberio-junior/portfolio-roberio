@@ -221,10 +221,6 @@
 /* Preenche as colunas restantes; uma linha inteira usa a versão compacta. */
 
 @media (min-width: 1101px) {
-  .moreCard:nth-child(3n + 2) {
-    grid-column: span 2;
-  }
-
   .moreCard:nth-child(3n + 1) {
     grid-column: 1 / -1;
 
