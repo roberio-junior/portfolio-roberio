@@ -254,10 +254,6 @@
     min-height: 180px;
     padding: 28px 20px;
   }
-
-  .moreCard:nth-child(2n + 1) {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 760px) {
