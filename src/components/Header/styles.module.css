@@ -9,12 +9,13 @@
 }
 
 .container {
-  width: calc(100% - 40px);
+  width: calc(100% - 48px);
   max-width: var(--container-width);
   height: 100%;
   margin: 0 auto;
 
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
@@ -88,7 +89,12 @@
 .navigation .contactButton:hover {
   color: white;
   background: var(--color-primary-hover);
-  transform: translateY(-2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navigation .contactButton:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* Menu mobile */
@@ -107,12 +113,6 @@
   border-radius: 9px;
 }
 
-@media (max-width: 1240px) {
-  .container {
-    padding: 0 20px;
-  }
-}
-
 @media (max-width: 1000px) {
   .logo {
     font-size: 26px;
@@ -120,6 +120,7 @@
 
   .menuButton {
     display: flex;
+    flex-shrink: 0;
   }
 
   .navigation {
@@ -130,6 +131,9 @@
     left: 16px;
     right: 16px;
 
+    max-height: calc(100dvh - var(--header-height) - 16px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
     padding: 20px;
     flex-direction: column;
     align-items: stretch;
@@ -149,6 +153,7 @@
   .navigation > a {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 
     min-height: 44px;
     padding: 10px 12px;
@@ -156,6 +161,12 @@
 
   .navigation .contactButton {
     margin-top: 8px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: calc(100% - 40px);
   }
 }
 

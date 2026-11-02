@@ -43,7 +43,7 @@ export default function Hero() {
 
         <div className={styles.poster}>
           <img
-            src="/images/retrato.png"
+            src="/images/retrato.webp"
             alt="Retrato de Robério Júnior com elementos gráficos de programação"
             className={styles.posterArtwork}
             fetchPriority="high"

@@ -48,6 +48,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: wrap;
 
   margin-bottom: 18px;
 
@@ -155,6 +156,7 @@
 
 .moreCard {
   grid-column: span 1;
+  overflow-wrap: anywhere;
 
   display: flex;
   flex-direction: column;
@@ -188,6 +190,7 @@
 .moreContent {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   align-items: center;
   gap: 12px;
 }
@@ -215,10 +218,14 @@
   line-height: 1.6;
 }
 
-/* Versão compacta quando a quantidade de projetos é múltipla de 3 */
+/* Preenche as colunas restantes; uma linha inteira usa a versão compacta. */
 
 @media (min-width: 1101px) {
-  .moreCard:last-child:nth-child(3n + 1) {
+  .moreCard:nth-child(3n + 2) {
+    grid-column: span 2;
+  }
+
+  .moreCard:nth-child(3n + 1) {
     grid-column: 1 / -1;
 
     flex-direction: row;
@@ -230,12 +237,12 @@
     text-align: left;
   }
 
-  .moreCard:last-child:nth-child(3n + 1) .moreContent {
+  .moreCard:nth-child(3n + 1) .moreContent {
     align-items: flex-start;
     gap: 6px;
   }
 
-  .moreCard:last-child:nth-child(3n + 1) .moreDescription {
+  .moreCard:nth-child(3n + 1) .moreDescription {
     max-width: none;
   }
 }
@@ -245,6 +252,15 @@
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .moreCard {
+    min-height: 180px;
+    padding: 28px 20px;
+  }
+
+  .moreCard:nth-child(2n + 1) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -264,24 +280,6 @@
 
   .filterSection {
     margin-top: 38px;
-  }
-
-  .moreCard {
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-
-    min-height: 180px;
-    padding: 28px 20px;
-    text-align: center;
-  }
-
-  .moreContent {
-    align-items: center;
-  }
-
-  .moreDescription {
-    max-width: 350px;
   }
 }
 

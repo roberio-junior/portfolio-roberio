@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow-wrap: anywhere;
   overflow: hidden;
 
   background: var(--color-surface);
@@ -15,16 +16,19 @@
     box-shadow 200ms ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #4d6ca5;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #4d6ca5;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* Capa gráfica */
 
 .cover {
   position: relative;
+  flex-shrink: 0;
   height: 220px;
   overflow: hidden;
   border-bottom: 1px solid #2a3b55;
@@ -32,6 +36,11 @@
 
 .featured .cover {
   height: 310px;
+}
+
+.cover:has(> .coverImage) {
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .posterArtwork {
@@ -285,7 +294,7 @@
 }
 
 @media (max-width: 620px) {
-  .featured .cover {
+  .featured .cover:not(:has(> .coverImage)) {
     height: 240px;
   }
 

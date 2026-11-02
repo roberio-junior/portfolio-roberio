@@ -37,6 +37,7 @@
 /* Cards */
 
 .card {
+  overflow-wrap: anywhere;
   display: flex;
   flex-direction: column;
 
