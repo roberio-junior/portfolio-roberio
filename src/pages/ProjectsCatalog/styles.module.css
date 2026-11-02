@@ -18,12 +18,26 @@
   margin: 0 auto;
 }
 
+.pageHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.pageHeading > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 
-  margin-bottom: 58px;
+  min-height: 44px;
+  margin-top: 8px;
 
   color: var(--color-muted);
   font-size: 14px;
@@ -257,8 +271,14 @@
     padding: 40px 20px 80px;
   }
 
+  .pageHeading {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .backLink {
-    margin-bottom: 40px;
+    align-self: flex-end;
+    margin-top: 0;
   }
 
   .grid {

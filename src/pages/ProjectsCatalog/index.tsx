@@ -56,15 +56,17 @@ export default function ProjectsCatalog() {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <Link to="/#projetos" className={styles.backLink}>
-          <ArrowLeft size={18} />
-          Voltar aos destaques
-        </Link>
+        <div className={styles.pageHeading}>
+          <SectionHeading
+            title="Meus projetos"
+            description="Explore os projetos que desenvolvi nas áreas de desenvolvimento web, mobile, backend e sistemas embarcados."
+          />
 
-        <SectionHeading
-          title="Meus projetos"
-          description="Explore os projetos que desenvolvi nas áreas de desenvolvimento web, mobile, backend e sistemas embarcados."
-        />
+          <Link to="/#projetos" className={styles.backLink}>
+            <ArrowLeft size={18} aria-hidden="true" />
+            Voltar aos destaques
+          </Link>
+        </div>
 
         <div className={styles.filterSection}>
           <div className={styles.filterHeader}>
