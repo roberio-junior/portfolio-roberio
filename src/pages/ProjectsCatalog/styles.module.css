@@ -205,10 +205,6 @@
   letter-spacing: -0.7px;
 }
 
-.moreTitle span {
-  color: var(--color-primary);
-}
-
 .moreDescription {
   max-width: 350px;
   margin: 0;

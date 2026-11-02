@@ -124,7 +124,6 @@ export default function ProjectsCatalog() {
                 <div className={styles.moreContent}>
                   <h3 className={styles.moreTitle}>
                     Mais projetos em breve
-                    <span>_</span>
                   </h3>
 
                   <p className={styles.moreDescription}>
