@@ -54,7 +54,6 @@
 }
 
 .eyebrow,
-.sectionNumber,
 .sidebarLabel {
   color: var(--color-accent);
   font-family: var(--font-heading);
@@ -70,11 +69,6 @@
   line-height: 1.05;
   letter-spacing: -3px;
   overflow-wrap: anywhere;
-}
-
-.heroInfo h1 span,
-.section h2 span {
-  color: var(--color-primary);
 }
 
 .summary {
@@ -299,7 +293,7 @@
 }
 
 .section h2 {
-  margin: 14px 0 27px;
+  margin: 0 0 27px;
 
   font-size: clamp(28px, 3vw, 38px);
   line-height: 1.2;

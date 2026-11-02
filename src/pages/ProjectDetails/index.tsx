@@ -123,7 +123,7 @@ export default function ProjectDetails() {
               ESTUDO DE CASO / {project.categoryLabel}
             </span>
 
-            <h1>{project.title}<span>_</span></h1>
+            <h1>{project.title}</h1>
 
             <p className={styles.summary}>
               {project.description}
@@ -178,7 +178,7 @@ export default function ProjectDetails() {
               >
                 <span>PROJETO / PORTFÓLIO</span>
 
-                <strong>{project.title}_</strong>
+                <strong>{project.title}</strong>
 
                 <span>WEB / MOBILE / TECNOLOGIA</span>
               </div>
@@ -243,22 +243,15 @@ export default function ProjectDetails() {
           </aside>
 
           <div className={styles.content}>
-            {sections.map((section, index) => (
+            {sections.map((section) => (
               <section
                 key={section.id}
                 id={section.id}
                 className={styles.section}
                 aria-labelledby={`${section.id}-title`}
               >
-                <span className={styles.sectionNumber}>
-                  {String(index + 1).padStart(2, '0')}
-                  {' / '}
-                  {String(sections.length).padStart(2, '0')}
-                </span>
-
                 <h2 id={`${section.id}-title`}>
                   {section.title}
-                  <span>_</span>
                 </h2>
 
                 {section.paragraphs.map((paragraph) => (
