@@ -10,7 +10,6 @@ import {
 import {
   ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
   ExternalLink,
 } from 'lucide-react';
 
@@ -313,14 +312,6 @@ export default function ProjectDetails() {
           )}
         </div>
 
-        <div className={styles.contactFooter}>
-          <span>GOSTOU DO PROJETO?</span>
-
-          <a href="mailto:roberiojr110@gmail.com">
-            Vamos conversar
-            <ArrowUpRight size={18} />
-          </a>
-        </div>
       </div>
     </div>
   );
