@@ -1,75 +1,82 @@
-# React + TypeScript + Vite
+# Portfólio | Robério Júnior
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal de **Robério Júnior**, desenvolvedor Web & Mobile e estudante de Tecnologia em Sistemas para Internet no IFRN.
 
-Currently, two official plugins are available:
+O site reúne informações sobre minha trajetória, tecnologias que utilizo e projetos desenvolvidos, com destaque para os desafios, as soluções e as decisões de desenvolvimento de cada trabalho.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Sobre o projeto
 
-## React Compiler
+Desenvolvi este portfólio para apresentar meus trabalhos de forma clara e organizada. A interface utiliza um visual escuro, com destaque para os projetos e navegação adaptada a diferentes tamanhos de tela.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Funcionalidades
 
-## Expanding the ESLint configuration
+- Apresentação profissional, formação e tecnologias.
+- Projetos em destaque na página inicial.
+- Catálogo com filtros por Web, Mobile, Full Stack e IoT.
+- Estudos de caso com detalhes de cada projeto.
+- Layout responsivo para desktop, tablet e dispositivos móveis.
+- Links para GitHub, LinkedIn e contato por e-mail.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Projetos apresentados
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Projeto | Descrição |
+| --- | --- |
+| **PeladaHub** | Aplicativo mobile para gerenciar grupos de futebol, treinos, times, partidas e estatísticas. |
+| **OndeTá** | Aplicativo mobile para solicitar e acompanhar serviços urbanos, com mapas e proposta de integração com IoT. |
+| **CT Mineral** | Sistema web para gerenciar clientes, amostras e processos laboratoriais. |
+| **Prompts Manager** | Aplicação web para organizar, pesquisar e reutilizar prompts de inteligência artificial. |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tecnologias utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React** — construção das interfaces e componentes.
+- **TypeScript** — desenvolvimento com tipagem estática.
+- **Vite** — ambiente de desenvolvimento e geração da versão de produção.
+- **React Router** — navegação entre páginas e estudos de caso.
+- **CSS Modules e CSS** — estilização e responsividade.
+- **Lucide React** — ícones da interface.
 
+## Executando localmente
+
+É necessário ter o **Node.js** e o **npm** instalados.
+
+```bash
+# Clone o repositório
+git clone https://github.com/roberio-junior/portfolio-roberio.git
+
+# Acesse a pasta do projeto
+cd portfolio-roberio
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Abra no navegador o endereço informado pelo Vite no terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Scripts disponíveis
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o ambiente de desenvolvimento. |
+| `npm run build` | Gera a versão de produção. |
+| `npm run preview` | Visualiza localmente a versão gerada. |
+| `npm run lint` | Executa a análise de código com ESLint. |
 
-```
+## Organização do código
+
+- `src/components/` — componentes reutilizáveis da interface.
+- `src/pages/` — páginas do portfólio.
+- `src/data/` — informações dos projetos, estudos de caso e tecnologias.
+- `public/images/` — imagens utilizadas no site.
+
+## Contato
+
+- **GitHub:** [roberio-junior](https://github.com/roberio-junior)
+- **LinkedIn:** [roberio-junior](https://br.linkedin.com/in/roberio-junior)
+- **E-mail:** [roberiojr110@gmail.com](mailto:roberiojr110@gmail.com)
+
+---
+
+Desenvolvido por **Robério Júnior**.
