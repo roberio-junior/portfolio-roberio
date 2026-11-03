@@ -1,13 +1,12 @@
-
 .page {
   overflow-wrap: anywhere;
-  min-height: 100vh;
-  padding: 45px 24px 0;
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--page-start-space) var(--container-gutter) 0;
 
   background:
     radial-gradient(
       ellipse at 85% 8%,
-      rgba(50, 101, 255, 0.12),
+      var(--color-primary-glow-page),
       transparent 42%
     ),
     var(--color-background);
@@ -24,10 +23,10 @@
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-2);
   align-items: center;
 
-  margin-bottom: 45px;
+  margin-bottom: var(--content-section-space);
 
   color: var(--color-muted);
   font-size: 13px;
@@ -46,10 +45,10 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  gap: 45px;
+  gap: var(--space-12);
   align-items: center;
 
-  padding-bottom: 65px;
+  padding-bottom: var(--content-section-space);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -64,7 +63,7 @@
 }
 
 .heroInfo h1 {
-  margin: 18px 0 22px;
+  margin: var(--space-5) 0 var(--space-6);
   font-size: clamp(48px, 6vw, 84px);
   line-height: 1.05;
   letter-spacing: -3px;
@@ -73,6 +72,7 @@
 
 .summary {
   max-width: 560px;
+  margin: 0;
   color: var(--color-muted);
   font-size: 16px;
   line-height: 1.8;
@@ -81,21 +81,21 @@
 .heroMeta {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 26px;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
 }
 
 .heroMeta > span {
   display: inline-flex;
   align-items: center;
   min-height: 33px;
-  padding: 7px 12px;
+  padding: 7px var(--space-3);
 
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 7px;
 
-  color: #c7d6ef;
+  color: var(--color-text-meta);
   font-size: 12px;
 }
 
@@ -106,8 +106,8 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
 }
 
 .backButton,
@@ -115,9 +115,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: var(--space-2);
   min-height: 46px;
-  padding: 11px 16px;
+  padding: var(--space-3) var(--space-4);
 
   border-radius: 9px;
   font-size: 13px;
@@ -125,12 +125,12 @@
 }
 
 .backButton {
-  color: white;
+  color: var(--color-on-primary);
   background: var(--color-primary);
 }
 
 .repoButton {
-  border: 1px solid #415477;
+  border: 1px solid var(--color-border-control);
 }
 
 .backButton:hover {
@@ -138,7 +138,7 @@
 }
 
 .repoButton:hover {
-  border-color: #7a98d8;
+  border-color: var(--color-border-control-hover);
 }
 
 /* Capa do estudo de caso */
@@ -150,7 +150,7 @@
   min-width: 0;
   overflow: hidden;
 
-  border: 1px solid #355185;
+  border: 1px solid var(--color-border-visual);
   border-radius: 18px;
 }
 
@@ -162,7 +162,7 @@
 
   width: 100%;
   min-height: 350px;
-  padding: 28px;
+  padding: var(--space-7);
 
   background-image:
     linear-gradient(
@@ -187,13 +187,13 @@
 
 .visualArtwork strong {
   max-width: 100%;
-  color: #fff;
+  color: var(--color-on-primary);
   font-family: var(--font-heading);
   font-size: clamp(40px, 4.5vw, 65px);
   line-height: 1.05;
   letter-spacing: -2px;
   overflow-wrap: anywhere;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 20px var(--color-shadow-card);
 }
 
 .coverImage {
@@ -226,14 +226,14 @@
   display: grid;
   grid-template-columns: 245px minmax(0, 1fr);
   align-items: start;
-  gap: 65px;
-  margin-top: 70px;
+  gap: var(--space-12);
+  margin-top: var(--content-section-space);
 }
 
 .sidebar {
   position: sticky;
-  top: calc(var(--header-height) + 30px);
-  max-height: calc(100dvh - var(--header-height) - 60px);
+  top: calc(var(--header-height) + var(--space-8));
+  max-height: calc(100dvh - var(--header-height) - 2 * var(--space-8));
   overflow-y: auto;
   overscroll-behavior-y: contain;
 }
@@ -245,15 +245,15 @@
 }
 
 .sidebarLabel {
-  margin-bottom: 19px;
+  margin-bottom: var(--space-5);
 }
 
 .navLink {
   display: flex;
   align-items: flex-start;
-  gap: 13px;
+  gap: var(--space-3);
 
-  padding: 12px 14px;
+  padding: var(--space-3);
 
   color: var(--color-muted);
   font-size: 13px;
@@ -264,7 +264,8 @@
 }
 
 .navLink span {
-  color: #7185aa;
+  flex-shrink: 0;
+  color: var(--color-text-navigation-index);
   font-family: var(--font-heading);
   font-size: 11px;
 }
@@ -272,7 +273,7 @@
 .navLink:hover,
 .navLinkActive {
   color: var(--color-text);
-  background: #14243c;
+  background: var(--color-surface-navigation);
   border-left-color: var(--color-primary);
 }
 
@@ -281,11 +282,11 @@
 }
 
 .section {
-  padding-bottom: 60px;
-  margin-bottom: 60px;
+  padding-bottom: var(--content-section-space);
+  margin-bottom: var(--content-section-space);
 
   border-bottom: 1px solid var(--color-border);
-  scroll-margin-top: calc(var(--header-height) + 30px);
+  scroll-margin-top: calc(var(--header-height) + var(--space-8));
 }
 
 .section:last-child {
@@ -294,12 +295,12 @@
   border-bottom: none;
 }
 
-.section:last-child > :last-child {
+.section > :last-child {
   margin-bottom: 0;
 }
 
 .section h2 {
-  margin: 0 0 27px;
+  margin: 0 0 var(--space-6);
 
   font-size: clamp(28px, 3vw, 38px);
   line-height: 1.2;
@@ -308,7 +309,7 @@
 
 .section > p {
   max-width: 790px;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 
   color: var(--color-muted);
   font-size: 16px;
@@ -318,12 +319,12 @@
 .points {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 30px;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
 }
 
 .point {
-  padding: 22px;
+  padding: var(--card-padding);
 
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -331,7 +332,7 @@
 }
 
 .point h3 {
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-2);
   font-size: 17px;
 }
 
@@ -345,8 +346,8 @@
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 25px 0 0;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -354,10 +355,10 @@
 .techList li {
   padding: 9px 13px;
 
-  color: #cbd8f0;
-  background: #1b2a40;
+  color: var(--color-text-tag);
+  background: var(--color-surface-tag);
 
-  border: 1px solid #30435f;
+  border: 1px solid var(--color-border-tag);
   border-radius: 7px;
 
   font-size: 13px;
@@ -377,21 +378,21 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: var(--space-6);
 
-  margin-top: 22px;
-  padding: 22px 0;
+  margin-top: var(--content-section-space);
+  padding: var(--space-6) 0;
   border-top: 1px solid var(--color-border);
 }
 
 .bottomNavigation > a {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-2);
   min-width: 0;
   max-width: 100%;
 
-  color: #a5bdfb;
+  color: var(--color-text-link);
   font-size: 14px;
   font-weight: 700;
 }
@@ -428,22 +429,13 @@
 
   .layout {
     grid-template-columns: 200px minmax(0, 1fr);
-    gap: 30px;
+    gap: var(--space-8);
   }
 }
 
 @media (max-width: 760px) {
-  .page {
-    padding: 30px 20px 0;
-  }
-
-  .breadcrumb {
-    margin-bottom: 35px;
-  }
-
   .hero {
-    gap: 35px;
-    padding-bottom: 40px;
+    gap: var(--space-8);
   }
 
   .heroInfo h1 {
@@ -458,12 +450,12 @@
 
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
 
-    margin: 25px 0;
-    padding: 15px;
+    margin: var(--space-6) 0;
+    padding: var(--space-4);
 
-    background: #0c1524;
+    background: var(--color-surface-mobile-navigation);
     border: 1px solid var(--color-border);
     border-radius: 10px;
   }
@@ -484,7 +476,7 @@
     color: var(--color-text);
     background: var(--color-surface);
 
-    border: 1px solid #415477;
+    border: 1px solid var(--color-border-control);
     border-radius: 7px;
 
     font-size: 14px;
@@ -492,7 +484,7 @@
 
   .layout {
     display: block;
-    margin-top: 45px;
+    margin-top: 0;
   }
 
   .sidebar {
@@ -500,8 +492,6 @@
   }
 
   .section {
-    padding-bottom: 45px;
-    margin-bottom: 45px;
     scroll-margin-top: calc(var(--header-height) + 115px);
   }
 
@@ -516,7 +506,7 @@
   }
 
   .section {
-    scroll-margin-top: calc(var(--header-height) + 30px);
+    scroll-margin-top: calc(var(--header-height) + var(--space-8));
   }
 }
 

@@ -4,12 +4,12 @@
   z-index: 100;
 
   height: var(--header-height);
-  background: rgba(6, 11, 20);
+  background: var(--color-background);
   border-bottom: 1px solid var(--color-border);
 }
 
 .container {
-  width: calc(100% - 48px);
+  width: calc(100% - 2 * var(--container-gutter));
   max-width: var(--container-width);
   height: 100%;
   margin: 0 auto;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 /* Logotipo */
@@ -53,7 +53,7 @@
 .navigation {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: var(--space-8);
 }
 
 .navigation > a {
@@ -72,12 +72,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-2);
 
   min-height: 44px;
-  padding: 0 20px;
+  padding: 0 var(--space-5);
 
-  color: white;
+  color: var(--color-on-primary);
   background: var(--color-primary);
   border-radius: 9px;
 
@@ -87,7 +87,7 @@
 }
 
 .navigation .contactButton:hover {
-  color: white;
+  color: var(--color-on-primary);
   background: var(--color-primary-hover);
 }
 
@@ -128,22 +128,22 @@
 
     position: absolute;
     top: 100%;
-    left: 16px;
-    right: 16px;
+    left: var(--space-4);
+    right: var(--space-4);
 
-    max-height: calc(100dvh - var(--header-height) - 16px);
+    max-height: calc(100dvh - var(--header-height) - var(--space-4));
     overflow-y: auto;
     overscroll-behavior-y: contain;
-    padding: 20px;
+    padding: var(--space-5);
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: var(--space-2);
 
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
 
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 18px 45px var(--color-shadow-menu);
   }
 
   .navigationOpen {
@@ -156,19 +156,14 @@
     flex-shrink: 0;
 
     min-height: 44px;
-    padding: 10px 12px;
+    padding: 10px var(--space-3);
   }
 
   .navigation .contactButton {
-    margin-top: 8px;
+    margin-top: var(--space-2);
   }
 }
 
-@media (max-width: 680px) {
-  .container {
-    width: calc(100% - 40px);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .logo,

@@ -1,14 +1,13 @@
-
 .section {
   position: relative;
   overflow: hidden;
 
-  padding: 112px 24px;
+  padding: var(--section-space) var(--container-gutter);
 
   background:
     radial-gradient(
       ellipse at 95% 50%,
-      rgba(50, 101, 255, 0.08),
+      var(--color-primary-glow),
       transparent 50%
     ),
     var(--color-background);
@@ -24,7 +23,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
-  gap: 80px;
+  gap: var(--space-16);
 }
 
 /* Conteúdo da esquerda */
@@ -33,13 +32,13 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: var(--space-8);
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-5);
 
   max-width: 600px;
 }
@@ -58,15 +57,15 @@
   min-width: 0;
   overflow-wrap: anywhere;
   width: 100%;
-  padding: 24px;
+  padding: var(--card-padding);
 
   background: linear-gradient(
     145deg,
-    #121e32,
-    #0d1625
+    var(--color-surface-panel-start),
+    var(--color-surface-panel-end)
   );
 
-  border: 1px solid #30466a;
+  border: 1px solid var(--color-border-panel);
   border-radius: 18px;
 }
 
@@ -76,9 +75,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--space-4);
 
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 
   color: var(--color-accent);
   font-family: var(--font-heading);
@@ -97,7 +96,7 @@
 .summaryGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 /* Card individual */
@@ -109,15 +108,15 @@
 
   min-width: 0;
   min-height: 155px;
-  padding: 18px;
+  padding: var(--space-5);
 
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid #283b56;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border-summary);
   border-radius: 12px;
 }
 
 .itemLabel {
-  color: #85a3ff;
+  color: var(--color-text-highlight);
 
   font-size: 10px;
   font-weight: 700;
@@ -126,7 +125,7 @@
 }
 
 .itemTitle {
-  margin: 14px 0 0;
+  margin: var(--space-3) 0 0;
 
   color: var(--color-text);
   font-size: 17px;
@@ -137,7 +136,7 @@
 
 .itemDescription {
   margin: auto 0 0;
-  padding-top: 12px;
+  padding-top: var(--space-3);
 
   color: var(--color-muted);
   font-size: 12px;
@@ -147,13 +146,9 @@
 /* Responsividade */
 
 @media (max-width: 900px) {
-  .section {
-    padding: 80px 24px;
-  }
-
   .container {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: var(--space-12);
   }
 
   .summaryPanel {
@@ -162,21 +157,13 @@
 }
 
 @media (max-width: 520px) {
-  .section {
-    padding: 64px 20px;
-  }
-
   .content {
-    gap: 25px;
+    gap: var(--space-6);
   }
 
   .text p {
     font-size: 15px;
     line-height: 1.8;
-  }
-
-  .summaryPanel {
-    padding: 20px;
   }
 
   .summaryGrid {
@@ -185,7 +172,6 @@
 
   .summaryItem {
     min-height: auto;
-    padding: 18px;
   }
 
   .itemTitle {
@@ -193,7 +179,7 @@
   }
 
   .itemDescription {
-    margin-top: 12px;
+    margin-top: var(--space-3);
     padding-top: 0;
   }
 }

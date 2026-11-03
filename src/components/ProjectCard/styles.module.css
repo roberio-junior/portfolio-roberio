@@ -1,4 +1,3 @@
-
 .card {
   display: flex;
   flex-direction: column;
@@ -7,7 +6,7 @@
   overflow: hidden;
 
   background: var(--color-surface);
-  border: 1px solid #2a3b55;
+  border: 1px solid var(--color-border-card);
   border-radius: 18px;
 
   transition:
@@ -19,8 +18,8 @@
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     transform: translateY(-5px);
-    border-color: #4d6ca5;
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-border-card-hover);
+    box-shadow: 0 22px 55px var(--color-shadow-card);
   }
 }
 
@@ -31,7 +30,7 @@
   flex-shrink: 0;
   height: 220px;
   overflow: hidden;
-  border-bottom: 1px solid #2a3b55;
+  border-bottom: 1px solid var(--color-border-card);
 }
 
 .featured .cover {
@@ -113,7 +112,7 @@
 
   max-width: calc(100% - 50px);
 
-  color: #ffffff;
+  color: var(--color-on-primary);
   font-family: var(--font-heading);
   font-size: clamp(30px, 3vw, 52px);
   font-weight: 700;
@@ -121,7 +120,7 @@
   letter-spacing: -2px;
   overflow-wrap: anywhere;
 
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 4px 20px var(--color-shadow-text);
 }
 
 .posterTitle span {
@@ -168,7 +167,7 @@
       #d49a45,
       transparent 44%
     ),
-    linear-gradient(135deg, #3b2b23, #111a2a);
+    linear-gradient(135deg, #3b2b23, var(--color-surface));
 }
 
 .promptsManager {
@@ -187,7 +186,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 27px;
+  padding: var(--card-padding);
 }
 
 .meta {
@@ -195,13 +194,13 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-2);
 
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .category {
-  color: #8eaaff;
+  color: var(--color-text-category);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.7px;
@@ -218,19 +217,19 @@
 }
 
 .inDevelopment {
-  color: #f4ff32;
-  border-color: rgba(244, 255, 50, 0.25);
-  background: rgba(244, 255, 50, 0.07);
+  color: var(--color-accent);
+  border-color: var(--color-accent-border);
+  background: var(--color-accent-surface);
 }
 
 .completed {
-  color: #80e3b0;
-  border-color: rgba(128, 227, 176, 0.25);
-  background: rgba(128, 227, 176, 0.07);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+  background: var(--color-success-surface);
 }
 
 .title {
-  margin: 0 0 12px;
+  margin: 0 0 var(--space-3);
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.8px;
@@ -241,7 +240,7 @@
 }
 
 .description {
-  margin: 0 0 23px;
+  margin: 0 0 var(--space-6);
   color: var(--color-muted);
   font-size: 14px;
   line-height: 1.75;
@@ -250,7 +249,7 @@
 .technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-2);
 
   margin: auto 0 0;
   padding: 0;
@@ -259,27 +258,27 @@
 
 .technology {
   padding: 7px 10px;
-  background: #1b2a40;
-  border: 1px solid #30435f;
+  background: var(--color-surface-tag);
+  border: 1px solid var(--color-border-tag);
   border-radius: 6px;
 
-  color: #d0daf0;
+  color: var(--color-text-tag-catalog);
   font-size: 11px;
   font-weight: 600;
 }
 
 .footer {
-  margin-top: 25px;
-  padding-top: 18px;
-  border-top: 1px solid #30415c;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-divider);
 }
 
 .repositoryLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
 
-  color: #8eaaff;
+  color: var(--color-text-category);
   font-size: 13px;
   font-weight: 700;
 }
@@ -289,7 +288,7 @@
 }
 
 .comingSoon {
-  color: #8294b2;
+  color: var(--color-text-subtle);
   font-size: 12px;
 }
 
@@ -304,10 +303,6 @@
 
   .featured .posterTitle {
     font-size: 51px;
-  }
-
-  .content {
-    padding: 22px;
   }
 
   .title,

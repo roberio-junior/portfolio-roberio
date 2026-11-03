@@ -1,4 +1,3 @@
-
 /* Seção */
 
 .section {
@@ -6,12 +5,12 @@
   overflow: hidden;
 
   width: 100%;
-  padding: 104px 24px 112px;
+  padding: var(--section-space) var(--container-gutter);
 
   background:
     radial-gradient(
       ellipse at 90% 8%,
-      rgba(50, 101, 255, 0.08),
+      var(--color-primary-glow),
       transparent 45%
     ),
     var(--color-background);
@@ -19,7 +18,7 @@
   border-top: 1px solid var(--color-border);
 
   scroll-margin-top: calc(
-    var(--header-height) + 20px
+    var(--header-height) + var(--space-5)
   );
 }
 
@@ -35,7 +34,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 32px;
+  gap: var(--space-8);
 }
 
 .headingContent {
@@ -48,13 +47,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  gap: 10px;
+  gap: var(--space-2);
 
   min-height: 46px;
   max-width: 100%;
-  padding: 12px 18px;
+  padding: var(--space-3) var(--space-5);
 
-  color: #ffffff;
+  color: var(--color-on-primary);
   background: var(--color-primary);
   border: 1px solid var(--color-primary);
   border-radius: 9px;
@@ -77,8 +76,8 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
 
-  gap: 20px;
-  margin-top: 44px;
+  gap: var(--space-5);
+  margin-top: var(--section-content-gap);
 }
 
 /* Card */
@@ -93,7 +92,7 @@
   overflow: hidden;
 
   background: var(--color-surface);
-  border: 1px solid #2a3b55;
+  border: 1px solid var(--color-border-card);
   border-radius: 16px;
 
   transition:
@@ -102,8 +101,8 @@
 }
 
 .card:hover {
-  border-color: #5071b0;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  border-color: var(--color-border-featured-hover);
+  box-shadow: 0 16px 40px var(--color-shadow-featured);
 }
 
 /* Capa */
@@ -116,7 +115,7 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
 
-  border-bottom: 1px solid #2a3b55;
+  border-bottom: 1px solid var(--color-border-card);
 }
 
 .coverImage {
@@ -199,7 +198,7 @@
   background:
     radial-gradient(
       circle at 75% 40%,
-      #3265ff,
+      var(--color-primary),
       transparent 55%
     ),
     linear-gradient(135deg, #102451, #071225);
@@ -243,7 +242,7 @@
   flex: 1;
 
   min-width: 0;
-  padding: 20px;
+  padding: var(--space-5);
 }
 
 .meta {
@@ -252,12 +251,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .category {
-  color: #8caaff;
+  color: var(--color-text-category-featured);
 
   font-size: 11px;
   font-weight: 700;
@@ -278,21 +277,21 @@
 }
 
 .inDevelopment {
-  color: #f4ff32;
-  background: rgba(244, 255, 50, 0.07);
-  border-color: rgba(244, 255, 50, 0.25);
+  color: var(--color-accent);
+  background: var(--color-accent-surface);
+  border-color: var(--color-accent-border);
 }
 
 .completed {
-  color: #80e3b0;
-  background: rgba(128, 227, 176, 0.07);
-  border-color: rgba(128, 227, 176, 0.25);
+  color: var(--color-success);
+  background: var(--color-success-surface);
+  border-color: var(--color-success-border);
 }
 
 /* Título e descrição */
 
 .cardTitle {
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-2);
 
   color: var(--color-text);
 
@@ -311,7 +310,7 @@
 
   overflow: hidden;
 
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-4);
 
   color: var(--color-muted);
 
@@ -325,7 +324,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  gap: 8px;
+  gap: var(--space-2);
   margin: auto 0 0;
   padding: 0;
 
@@ -339,10 +338,10 @@
   min-height: 28px;
   padding: 5px 9px;
 
-  color: #cbd8f0;
-  background: #1b2a40;
+  color: var(--color-text-tag);
+  background: var(--color-surface-tag);
 
-  border: 1px solid #30435f;
+  border: 1px solid var(--color-border-tag);
   border-radius: 6px;
 
   font-size: 11px;
@@ -352,19 +351,19 @@
 /* Rodapé */
 
 .cardFooter {
-  margin-top: 22px;
-  padding-top: 16px;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
 
-  border-top: 1px solid #30415c;
+  border-top: 1px solid var(--color-border-divider);
 }
 
 .repositoryLink {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-3);
 
-  color: #c4d2ff;
+  color: var(--color-text-link-featured);
 
   font-size: 13px;
   font-weight: 700;
@@ -392,33 +391,20 @@
 }
 
 @media (max-width: 900px) {
-  .section {
-    padding: 80px 24px;
-  }
-
   .heading {
     align-items: flex-start;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-6);
   }
 }
 
 @media (max-width: 680px) {
-  .section {
-    padding: 68px 20px;
-  }
-
   .grid {
     grid-template-columns: 1fr;
-    margin-top: 32px;
   }
 
   .catalogLink {
     width: 100%;
-  }
-
-  .cardBody {
-    padding: 22px;
   }
 }
 

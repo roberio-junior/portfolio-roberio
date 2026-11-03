@@ -3,22 +3,137 @@
 :root {
   font-family: 'DM Sans', sans-serif;
 
+  /* Cores principais */
   --color-background: #060b14;
-  --color-surface: #111a2a;
-  --color-surface-hover: #19263a;
-
   --color-primary: #3265ff;
   --color-primary-hover: #4978ff;
   --color-accent: #f4ff32;
 
+  /* Superfícies */
+  --color-surface: #111a2a;
+  --color-surface-hover: #19263a;
+  --color-surface-footer: #080d16;
+  --color-surface-panel-start: #121e32;
+  --color-surface-panel-end: #0d1625;
+  --color-surface-subtle: rgba(255, 255, 255, 0.025);
+  --color-surface-tag: #1b2a40;
+  --color-surface-skill-hover: #142036;
+  --color-surface-navigation: #14243c;
+  --color-surface-mobile-navigation: #0c1524;
+  --color-surface-placeholder: #101a2b;
+
+  /* Textos */
   --color-text: #f8fafc;
   --color-muted: #a7b4c9;
+  --color-on-primary: #ffffff;
+  --color-text-highlight: #85a3ff;
+  --color-text-category: #8eaaff;
+  --color-text-category-featured: #8caaff;
+  --color-text-tag: #cbd8f0;
+  --color-text-tag-catalog: #d0daf0;
+  --color-text-tag-skill: #c9d5ec;
+  --color-text-meta: #c7d6ef;
+  --color-text-link: #a5bdfb;
+  --color-text-link-featured: #c4d2ff;
+  --color-text-subtle: #8294b2;
+  --color-text-index: #8192b0;
+  --color-text-navigation-index: #7185aa;
+  --color-text-copyright: #8292a9;
+  --color-text-contact: #b9c6da;
+
+  /* Bordas */
   --color-border: #24354f;
+  --color-border-card: #2a3b55;
+  --color-border-card-hover: #4d6ca5;
+  --color-border-featured-hover: #5071b0;
+  --color-border-skill: #293d5c;
+  --color-border-skill-hover: #405b86;
+  --color-border-panel: #30466a;
+  --color-border-summary: #283b56;
+  --color-border-tag: #30435f;
+  --color-border-divider: #30415c;
+  --color-border-button: #43536d;
+  --color-border-button-hover: #6387ff;
+  --color-border-control: #415477;
+  --color-border-control-hover: #7a98d8;
+  --color-border-visual: #355185;
+  --color-border-filter: #30415e;
+  --color-border-filter-hover: #5879b2;
+  --color-border-placeholder: #405476;
+
+  /* Estados */
+  --color-success: #80e3b0;
+  --color-success-surface: rgba(128, 227, 176, 0.07);
+  --color-success-border: rgba(128, 227, 176, 0.25);
+  --color-accent-surface: rgba(244, 255, 50, 0.07);
+  --color-accent-border: rgba(244, 255, 50, 0.25);
+
+  /* Gradientes e efeitos */
+  --color-primary-glow-subtle: rgba(50, 101, 255, 0.06);
+  --color-primary-glow: rgba(50, 101, 255, 0.08);
+  --color-primary-tint: rgba(50, 101, 255, 0.1);
+  --color-primary-glow-page: rgba(50, 101, 255, 0.12);
+  --color-primary-glow-hero: rgba(50, 101, 255, 0.13);
+  --color-poster-glow: rgba(24, 72, 220, 0.18);
+  --color-shadow-artwork: rgba(0, 0, 0, 0.16);
+  --color-shadow-featured: rgba(0, 0, 0, 0.22);
+  --color-shadow-card: rgba(0, 0, 0, 0.3);
+  --color-shadow-text: rgba(0, 0, 0, 0.35);
+  --color-shadow-menu: rgba(0, 0, 0, 0.4);
+
+  /* Escala de espaçamento: cada unidade corresponde a 4px. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-13: 52px;
+  --space-16: 64px;
+  --space-18: 72px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Ritmo compartilhado por seções, páginas e cards. */
+  --container-gutter: var(--space-6);
+  --section-space: var(--space-24);
+  --section-content-gap: var(--space-10);
+  --card-padding: var(--space-6);
+  --page-start-space: var(--space-12);
+  --page-end-space: var(--space-20);
+  --content-section-space: var(--space-12);
 
   --font-heading: 'Space Grotesk', sans-serif;
-
   --container-width: 1200px;
   --header-height: 76px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-space: var(--space-20);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --page-start-space: var(--space-8);
+    --page-end-space: var(--space-16);
+    --content-section-space: var(--space-8);
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --container-gutter: var(--space-5);
+    --section-space: var(--space-16);
+    --section-content-gap: var(--space-8);
+    --card-padding: var(--space-5);
+  }
 }
 
 * {
@@ -72,7 +187,7 @@ a {
 
 :focus-visible {
   outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
+  outline-offset: var(--space-1);
 }
 
 ::selection {
