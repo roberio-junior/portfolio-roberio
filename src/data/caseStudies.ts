@@ -111,47 +111,82 @@ export const caseStudies: Record<ProjectId, CaseStudy> = {
         id: 'visao-geral',
         title: 'Visão geral',
         paragraphs: [
-          'O OndeTá é um projeto de rastreamento de veículos que integra sistemas embarcados, backend, aplicativo móvel e uma interface web.',
-          'A proposta foi reunir diferentes tecnologias para permitir a coleta, a transmissão e a visualização de informações de localização.',
+          'O OndeTá é um projeto desenvolvido em equipe no IFRN – Campus Currais Novos para melhorar a comunicação entre a população e empresas prestadoras de serviços urbanos.',
+          'A solução combina um aplicativo móvel com uma proposta de integração a dispositivos de Internet das Coisas (IoT). O objetivo é permitir a solicitação e o acompanhamento de serviços como coleta de resíduos e manutenção urbana, além da visualização de informações sobre veículos e rotas.',
         ],
       },
       {
         id: 'problema',
         title: 'Problema identificado',
         paragraphs: [
-          'O acompanhamento de veículos exige a comunicação entre dispositivos de rastreamento e aplicações que permitam consultar as informações recebidas.',
-          'O desafio do projeto foi construir essa integração, conectando hardware, comunicação de dados e interfaces de acompanhamento.',
+          'Muitas solicitações de serviços urbanos são feitas por telefone ou mensagens, sem um canal centralizado para consultar o andamento dos atendimentos.',
+          'A falta de informações sobre os veículos, as rotas e o status do serviço gera incerteza para os usuários e dificulta a comunicação com as empresas responsáveis.',
+        ],
+      },
+      {
+        id: 'pesquisa',
+        title: 'Pesquisa e descoberta',
+        paragraphs: [
+          'Antes de definir a solução, a equipe realizou uma pesquisa com 37 participantes para compreender como as pessoas solicitavam e acompanhavam serviços urbanos.',
+          'Os resultados reforçaram a importância de centralizar solicitações, dar visibilidade ao andamento dos atendimentos e facilitar o acesso às informações.',
+        ],
+        points: [
+          {
+            title: '86% utilizavam telefone ou mensagens',
+            description:
+              'Participantes que procuravam ou acompanhavam solicitações apenas por esses canais.',
+          },
+          {
+            title: '83% sem visibilidade em tempo real',
+            description:
+              'Participantes que não tinham acesso a informações em tempo real sobre o atendimento.',
+          },
+          {
+            title: '70% interessados no OndeTá',
+            description:
+              'Participantes que demonstraram interesse em utilizar a solução apresentada.',
+          },
         ],
       },
       {
         id: 'solucao',
         title: 'Solução desenvolvida',
         paragraphs: [
-          'O projeto utiliza um dispositivo com ESP32, módulo GPS e comunicação móvel para obter e transmitir informações de localização.',
-          'Esses dados são processados por uma API e disponibilizados para consulta em aplicações mobile e web.',
+          'O OndeTá reúne usuários e prestadores de serviços em um ambiente digital. Pelo aplicativo, é possível consultar serviços disponíveis, registrar solicitações e acompanhar informações sobre cada atendimento.',
+          'Para as empresas, a proposta inclui ferramentas para visualizar solicitações e sua distribuição no mapa. O projeto também explora o rastreamento de veículos por dispositivos IoT, com o objetivo de ampliar o acompanhamento das operações.',
         ],
       },
       {
         id: 'funcionalidades',
         title: 'Funcionalidades',
         paragraphs: [
-          'A solução foi organizada para integrar a coleta de localização e seu acompanhamento por meio de interfaces digitais.',
+          'As interfaces apresentadas no projeto contemplam tanto a experiência de quem solicita um serviço quanto a visualização de informações úteis para os prestadores.',
         ],
         points: [
           {
-            title: 'Rastreamento',
+            title: 'Solicitação de serviços',
             description:
-              'Obtenção de informações de localização por meio de dispositivo embarcado.',
+              'Consulta de serviços disponíveis e registro de solicitações diretamente pelo aplicativo.',
           },
           {
-            title: 'Comunicação',
+            title: 'Acompanhamento de atendimentos',
             description:
-              'Transmissão de dados entre o dispositivo e os serviços do sistema.',
+              'Visualização dos dados da solicitação e do status do serviço.',
           },
           {
-            title: 'Visualização',
+            title: 'Visualização em mapa',
             description:
-              'Acompanhamento das informações por aplicativo móvel e painel web.',
+              'Interface geográfica para acompanhar informações de localização dos veículos e seus deslocamentos.',
+          },
+          {
+            title: 'Mapa de demanda',
+            description:
+              'Visualização da distribuição geográfica das solicitações, com filtros por período, serviço e status.',
+          },
+          {
+            title: 'Gestão de serviços',
+            description:
+              'Recursos voltados à organização das solicitações e dos serviços oferecidos pelas empresas.',
           },
         ],
       },
@@ -159,68 +194,96 @@ export const caseStudies: Record<ProjectId, CaseStudy> = {
         id: 'tecnologias',
         title: 'Tecnologias utilizadas',
         paragraphs: [
-          'O projeto envolve ESP32, GPS, comunicação MQTT, NestJS, PostgreSQL e React Native.',
-          'A integração dessas tecnologias permite conectar o dispositivo físico aos serviços e interfaces de consulta.',
+          'O aplicativo utiliza React Native e TypeScript, com Axios para comunicação com serviços e Lucide para ícones. O backend foi estruturado com NestJS e PostgreSQL, e o projeto também utilizou Firebase e Neon.',
+          'A experiência de interface foi trabalhada no Figma. Entre as ferramentas de desenvolvimento e infraestrutura estão VS Code, Docker, Vercel, Jest, Insomnia, Git e GitHub.',
+          'Na parte de IoT, a equipe trabalhou com Raspberry Pi Pico W e um modelo de protótipo com comunicação HTTP por Wi-Fi. A arquitetura proposta para a evolução do rastreamento utiliza GPS, redes móveis e MQTT, seguindo o modelo Publish/Subscribe.',
         ],
       },
       {
         id: 'desafios',
         title: 'Desenvolvimento e desafios',
         paragraphs: [
-          'Um dos principais desafios foi integrar diferentes camadas: dispositivo embarcado, transmissão das informações, API, persistência e interfaces de acompanhamento.',
-          'O projeto proporcionou experiência prática no desenvolvimento de uma solução que combina IoT, backend e aplicações para usuários.',
+          'Um dos principais desafios foi pensar a integração entre diferentes camadas da solução: aplicativo móvel, serviços de backend, banco de dados, mapas e hardware.',
+          'O trabalho em equipe foi organizado com Kanban, permitindo acompanhar as atividades, realizar entregas frequentes e corrigir problemas ao longo do desenvolvimento.',
+        ],
+      },
+      {
+        id: 'resultados',
+        title: 'Resultados e aprendizados',
+        paragraphs: [
+          'O projeto resultou em interfaces para solicitação e acompanhamento de serviços e em uma proposta técnica para integrar o monitoramento de veículos à plataforma.',
+          'A pesquisa com usuários ajudou a orientar as decisões do produto. O desenvolvimento também proporcionou experiência com aplicações mobile, backend, IoT e colaboração entre diferentes áreas. A arquitetura MQTT com redes móveis foi apresentada como proposta, não como uma integração já implantada.',
         ],
       },
     ],
   },
-
   ctMineral: {
     sections: [
       {
         id: 'visao-geral',
         title: 'Visão geral',
         paragraphs: [
-          'O CT Mineral é uma plataforma web desenvolvida para apoiar o gerenciamento dos serviços do Centro de Tecnologia Mineral do IFRN.',
-          'O sistema reúne funcionalidades relacionadas à organização dos serviços, autenticação de usuários e controle de acesso.',
+          'O CT Mineral é um sistema web desenvolvido em equipe durante o Projeto Integrador I do curso de Tecnologia em Sistemas para Internet do IFRN – Campus Currais Novos.',
+          'A aplicação foi criada para apoiar as atividades do Centro de Tecnologia Mineral, reunindo em uma única plataforma o gerenciamento de clientes, amostras, processos laboratoriais e orçamentos.',
         ],
       },
       {
         id: 'problema',
         title: 'Problema identificado',
         paragraphs: [
-          'O gerenciamento de serviços exige uma organização que facilite o acompanhamento das informações e o acesso às operações por diferentes usuários.',
-          'O projeto buscou atender essa necessidade por meio de uma aplicação web.',
+          'O CT Mineral utilizava planilhas e formulários para armazenar informações de clientes e amostras. Esses registros ficavam distribuídos entre diferentes documentos, dificultando a centralização e a consulta dos dados.',
+          'Além disso, equipamentos laboratoriais geravam arquivos com dados brutos que precisavam ser tratados para separar as informações necessárias às análises.',
         ],
       },
       {
         id: 'solucao',
         title: 'Solução desenvolvida',
         paragraphs: [
-          'Foi desenvolvida uma plataforma com interface web e integração com serviços de backend e armazenamento de dados.',
-          'A autenticação integrada ao SUAP permite utilizar a identidade institucional, enquanto o controle de acesso diferencia as operações disponíveis aos usuários.',
+          'A equipe desenvolveu uma plataforma web para centralizar as informações do laboratório e automatizar parte de suas atividades operacionais.',
+          'O sistema permite cadastrar clientes e amostras, gerenciar processos de análise, gerar orçamentos em PDF e tratar planilhas Excel. Também conta com autenticação institucional e permissões específicas para técnicos e diretores.',
         ],
       },
       {
         id: 'funcionalidades',
         title: 'Funcionalidades',
         paragraphs: [
-          'A plataforma concentra recursos voltados à administração e ao acompanhamento de serviços.',
+          'As funcionalidades foram organizadas de acordo com as etapas de atendimento e análise realizadas pelo CT Mineral.',
         ],
         points: [
           {
-            title: 'Gestão de serviços',
+            title: 'Gerenciamento de clientes',
             description:
-              'Organização e acompanhamento das informações relacionadas aos serviços.',
+              'Cadastro e consulta de dados de contato, endereço e técnicos responsáveis pelos serviços.',
+          },
+          {
+            title: 'Cadastro de amostras',
+            description:
+              'Registro das amostras recebidas, com identificação, foto opcional, cliente e processos laboratoriais associados.',
+          },
+          {
+            title: 'Geração de orçamentos',
+            description:
+              'Criação automática de documentos PDF com identificação do orçamento, informações do cliente e da amostra e valor do serviço.',
+          },
+          {
+            title: 'Tratamento de arquivos Excel',
+            description:
+              'Processamento dos dados brutos de análises laboratoriais e geração de novas planilhas tratadas, disponíveis para download.',
           },
           {
             title: 'Autenticação institucional',
             description:
-              'Integração de autenticação com o SUAP.',
+              'Acesso de usuários autorizados por meio do SUAP do IFRN, utilizando OAuth.',
           },
           {
-            title: 'Controle de acesso',
+            title: 'Controle de permissões',
             description:
-              'Permissões de uso de acordo com as responsabilidades dos usuários.',
+              'Perfis de técnicos e diretores, com funcionalidades administrativas restritas a quem possui autorização.',
+          },
+          {
+            title: 'Gerenciamento de processos',
+            description:
+              'Cadastro e manutenção dos serviços de análise oferecidos pelo laboratório e de seus respectivos valores.',
           },
         ],
       },
@@ -228,21 +291,28 @@ export const caseStudies: Record<ProjectId, CaseStudy> = {
         id: 'tecnologias',
         title: 'Tecnologias utilizadas',
         paragraphs: [
-          'O desenvolvimento envolveu Vue.js e TypeScript na aplicação web, além de Supabase e mecanismos de autenticação OAuth2.',
-          'As tecnologias foram utilizadas para construir a interface, integrar serviços e gerenciar o acesso às informações.',
+          'A interface web foi desenvolvida com Vue.js, TypeScript e Vuetify. O backend utiliza AdonisJS e TypeScript, com PostgreSQL para persistência de dados e Python entre as tecnologias utilizadas no projeto.',
+          'O desenvolvimento contou com Docker, VS Code, Git e GitHub. Entre as integrações estão a autenticação com SUAP via OAuth e o Supabase Storage, utilizado para armazenar as planilhas tratadas.',
         ],
       },
       {
         id: 'desafios',
         title: 'Desenvolvimento e desafios',
         paragraphs: [
-          'Entre os aspectos técnicos do projeto estão a integração com serviços institucionais, a autenticação e a definição de permissões.',
-          'A experiência contribuiu para o desenvolvimento de aplicações web com diferentes responsabilidades de acesso e integração de sistemas.',
+          'O projeto exigiu compreender a rotina de um laboratório e traduzir suas necessidades em funcionalidades, requisitos e estruturas de dados. A equipe elaborou diagramas de casos de uso, classes e banco de dados para orientar o desenvolvimento.',
+          'A integração com a autenticação institucional, a diferenciação de permissões e o tratamento automatizado de arquivos Excel também foram partes importantes da solução.',
+        ],
+      },
+      {
+        id: 'resultados',
+        title: 'Resultados e aprendizados',
+        paragraphs: [
+          'O desenvolvimento resultou em uma aplicação que reúne atividades operacionais do CT Mineral, como cadastros, organização de serviços, geração de orçamentos e tratamento de dados laboratoriais.',
+          'O trabalho proporcionou experiência em desenvolvimento web full stack, modelagem de dados, integração de serviços e automação de processos para uma necessidade real. O material do projeto não apresenta métricas de produtividade nem confirma implantação em produção.',
         ],
       },
     ],
   },
-
   promptsManager: {
     sections: [
       {
